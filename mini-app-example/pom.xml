@@ -154,7 +154,7 @@
                 <artifactId>vaadin-maven-plugin</artifactId>
                 <version>${vaadin.version}</version>
                 <configuration>
-                    <nodeVersion>v14.17.0</nodeVersion> <!-- specify a compatible Node.js version -->
+                    <nodeVersion>v18.16.1</nodeVersion> <!-- specify a compatible Node.js version -->
                 </configuration>
                 <executions>
                     <execution>
@@ -191,7 +191,7 @@
                         <artifactId>vaadin-maven-plugin</artifactId>
                         <version>${vaadin.version}</version>
                         <configuration>
-                            <nodeVersion>v14.17.0</nodeVersion> <!-- specify a compatible Node.js version -->
+                            <nodeVersion>v18.16.1</nodeVersion> <!-- specify a compatible Node.js version -->
                         </configuration>
                         <executions>
                             <execution>

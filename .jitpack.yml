@@ -1,8 +1,29 @@
+# .jitpack.yml
 install:
-  - echo "Installing Node.js"
+  - echo "Installing Node.js using NVM"
   - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-  - export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+  - export NVM_DIR="$HOME/.nvm"
+  - echo "NVM_DIR set to $NVM_DIR"
   - [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  - echo "NVM loaded"
   - nvm install 18.16.1
   - nvm use 18.16.1
+  - echo "Node.js version:"
   - node -v
+  - echo "npm version:"
+  - npm -v
+
+before_install:
+  - echo "Using Node.js version before installation"
+  - export NVM_DIR="$HOME/.nvm"
+  - echo "NVM_DIR set to $NVM_DIR"
+  - [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  - echo "NVM loaded"
+  - nvm use 18.16.1
+  - echo "Node.js version:"
+  - node -v
+
+script:
+  - echo "Starting Maven build"
+  - mvn clean install
+  - echo "Maven build completed"
